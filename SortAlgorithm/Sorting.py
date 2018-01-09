@@ -46,4 +46,22 @@ def mergeSort(myList):
             else:
                 pointer_2+=1
         return myList
+        
+def selectSort(myList):
+    '''Sort list with ascending order using selection sort algorithm'''
+    N = len(myList)
+    for i in range(0,N-1,1):
+        min_value = myList[i]
+        label = i
+        for j in range(i+1,N,1):
+            # Always to find the minimum value from the whole list
+            if myList[j] < min_value:
+                min_value = myList[j]
+                label = j
+        if i!= label : #minimum of this search doesn't happen at initial value
+            # exchange should happen between i th and j th element
+            temp = myList[i]
+            myList[i] = myList[label]
+            myList[label] = temp
+    return myList
        
